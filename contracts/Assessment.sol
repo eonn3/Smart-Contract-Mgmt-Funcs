@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
 //import "hardhat/console.sol";
@@ -87,7 +87,7 @@ contract Assessment {
     function unlock(uint256 _unlockAmount) public {
         require(msg.sender == owner, "You are not the owner of this account");
         uint _previousLocked = lockedAmount;
-        // make sure there is enough balance to lock
+        // make sure there is enough balance to unlock
         if (lockedAmount < _unlockAmount) {
             revert InsufficientUBalance({
                 balance: balance,
